@@ -1,0 +1,18 @@
+body {
+    font-family: arial;
+    padding: 30px;
+}
+.red {
+    color: #f00;
+}
+.user-form-wrapper {
+    padding: 15px 0 30px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px; 
+}
+#repo-list {
+    padding-left: 20px;
+}
+#repo-list li {
+    padding: 10px;
+}
