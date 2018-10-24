@@ -10,13 +10,25 @@
 <body>
     <h1>Repo Manager</h1>
     <h2>Get User Repos</h2>
-    <div id="user-form" class="user-form-wrapper">
+    <div class="user-form-wrapper">
         <label>User Id</label> <input name='user' id='userId' />
-        <input type="button" value="Submit" onclick='getUserRepos()'/>
+        <input type="button" value="Submit" class="submit-button"/>
     </div>
     <h2>Repo List</h2>
     <ul id="repo-list">        
     </ul>
-    <script src="scripts/index.js"></script>
+    <div class="issue-form-wrapper">
+        <div class="container">
+            <h2>Create issue</h2>
+            <form name="issueForm">
+                <label>Issue Title</label><span class='red'>*</span><br>
+                <input name='issueTitle' id='issueTitle' type='text'/><br><br>
+                <label>Description</label><br>
+                <textarea name='description' id='issueDescription'></textarea><br><br>
+                <button class='create'>Create issue</button> <button class='cancel'>Cancel</button>
+            </form>
+        </div>
+    </div>    
+    <script src="scripts/index.js?asd=adsf"></script>
 </body>
 </html>
