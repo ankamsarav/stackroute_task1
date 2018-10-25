@@ -1,3 +1,7 @@
+/* URLs referred
+https://developer.github.com/v3/repos/
+https://developer.github.com/v3/issues/
+*/
 (function(){
     var userId, createIssueParam,
     issueForm = document.querySelector('.issue-form-wrapper'),
@@ -6,7 +10,7 @@
     usernameSubmitBtn = document.querySelector('.user-form-wrapper .submit-button'),
     issueDescription = document.querySelector('#issueDescription'),
     issueTitle = document.querySelector('#issueTitle'),
-    accessToken = '2faa33d2b933ddbbcefd4d1fe1a17ed5c4a3f134';
+    accessToken = '3c5b33dc6db03fc05b5263bbaccbb88605271883';
 
     var init = function(){
         usernameSubmitBtn.addEventListener('click',getUserRepos);
@@ -45,19 +49,16 @@
     var getRepoList = (url,callback)=> fetch(url).then(response => response.json().then((data)=>{callback(data)}))
         .catch(error => console.log(error));
 
-    var createIssuePayLoad = function(issueTitle, issueDescription){
-        var payLoad = {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/vnd.github.symmetra-preview+json'
-            },
-            body: JSON.stringify({
-                "title": issueTitle,
-                "body": issueDescription
-            })
-        }
-        return payLoad;
-    }
+    var createIssuePayLoad = (issueTitle, issueDescription) => ({
+        method: 'POST',
+        headers: {
+            'Accept': 'application/vnd.github.symmetra-preview+json'
+        },
+        body: JSON.stringify({
+            "title": issueTitle,
+            "body": issueDescription
+        })
+    });
     var showIssueForm = function(e){      
         issueForm.classList.add('show');
         createIssueFormBtn.addEventListener('click', (e)=>{ e.preventDefault(); createIssue()});
